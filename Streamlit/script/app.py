@@ -357,4 +357,4 @@ fig_comp.update_layout(height=800, width=800, title_text='Comparação das Venda
 st.plotly_chart(fig_comp)
 
 
-##  Execute o seguinte codigo no terminal para abrir o app: streamlit run app.py
+##  Execute o seguinte codigo no terminal para abrir o app: streamlit run app.pygi
