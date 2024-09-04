@@ -17,8 +17,26 @@ from sklearn.linear_model import LinearRegression
 from xgboost import XGBRegressor
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+
+
+# Estrutura de dados
+
+
+
+
+
+#Estrutura do APP
 # Título da aplicação
 st.title('📈 Análise de Vendas de Comércio Eletrônico')
+
+# Informações gerais sobre o DataFrame
+st.subheader('Informações sobre o DataFrame')
+
+st.markdown(''' ###### Conjunto de dados abrangendo uma variedade de categorias de produtos de um E-comerce, preços, avaliações de clientes e tendências de vendas no último ano. 
+###### Este conjunto de dados é ideal para analisar tendências de mercado, comportamento do cliente e desempenho de vendas. 
+Vamos explorar os dados para descobrir insights que podem otimizar listagens de precos de produtos, estratégias de campanhas de marketing e previsão de vendas!
+''')
 
 # Leitura do DataFrame
 @st.cache_data
@@ -33,13 +51,29 @@ df = load_data()
 if st.checkbox('Mostrar dados'):
     st.write(df)
 
-# Informações gerais sobre o DataFrame
-st.subheader('Informações sobre o DataFrame')
-st.write(df.info())
+
 
 # Estatísticas descritivas
 st.subheader('Estatísticas Descritivas')
 st.write(df.describe())
+
+st.markdown(''' ### Interpretação:
+
+1. count: Todas as colunas têm 1000 registros. Isso indica que não há valores ausentes nos dados.
+
+2. mean (média):
+O preço médio dos produtos (price) é 247,67.
+A pontuação média das avaliações (review_score) é 3,03 o que sugere que, em média, os produtos têm uma avaliação satisfatória.
+As vendas médias por mês variam entre 487,19 e 514,80, mostrando uma certa consistência nas vendas ao longo dos meses.
+
+
+3. std (desvio padrão):
+O desvio padrão do preço (price) é 144,61, indicando que há uma grande variação nos preços dos produtos. Esse desvio representa 58% do valor medio do produto gerando uma grande dispeção nos preços.
+
+4. A pontuação de avaliação tem um desvio padrão de 1,17, sugerindo alguma dispersão nas avaliações dos produtos.
+As vendas mensais têm desvios padrão em torno de 280-290, o que pode indicar que há variações consideráveis nas vendas mensais entre os produtos.
+''')
+
 
 # Feature Engineering
 df['mean_sales'] = df[[f'sales_month_{i}' for i in range(1, 13)]].mean(axis=1)
