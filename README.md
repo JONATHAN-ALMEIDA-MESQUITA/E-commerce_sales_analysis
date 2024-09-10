@@ -46,10 +46,10 @@ This project focuses on analyzing and predicting sales in an e-commerce dataset 
 
 ## 📊 Results and Visualizations
 ### Evaluated Models
-+ **🌲 Random Forest:** MAE: 3833.85, MSE: 42,981,625.24
-+ **📉 Linear Regression:** MAE: 98,874.36, MSE: 18,736,420,807.01
-+ **⚡ XGBoost Regressor:** MAE: 9945.71, MSE: 180,299,575.99
-+ **📈 Gradient Boosting Regressor:** MAE: 6429.05, MSE: 74,975,642.94
++ **🌲 Random Forest:** MAE: 3.738, MSE: 40.743
++ **📉 Linear Regression:** MAE: 99.960, MSE: 19.166
++ **⚡ XGBoost Regressor:** MAE: 10.353, MSE: 199.503
++ **📈 Gradient Boosting Regressor:** MAE: 6.400, MSE: 74.169
 
 
 ## Visualizations
